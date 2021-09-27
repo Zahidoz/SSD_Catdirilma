@@ -1,0 +1,92 @@
+﻿<Window x:Class="SSD_Catdirilma.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:local="clr-namespace:SSD_Catdirilma"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1060"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border CornerRadius="30" Background="#1a1a1a" Grid.ColumnSpan="2" />
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <TextBlock Foreground="#36b663" FontSize="33" 
+                           FontFamily="Comic Sans MS"
+                           Margin="20 10 0 0 ">Uber</TextBlock>
+            </Grid>
+            
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock FontSize="22" Foreground="white" HorizontalAlignment="Center"
+                           Margin="0 40 0 0">Route Details</TextBlock>
+
+                <TextBox Grid.Row="1" Style="{StaticResource txt_adress}" 
+                         Margin="20 21 20 11"></TextBox>
+
+                <TextBox Grid.Row="2" Style="{StaticResource txt_adress}"
+                         Margin="20 21 20 11"></TextBox>
+            
+            </Grid>
+
+            <Grid Grid.Row="3" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock FontSize="22" Foreground="white" TextAlignment="Center">Choose Class</TextBlock>
+                
+                <Button Grid.Row="1" Style="{StaticResource bozBtn}" 
+                        FontSize="22"
+                        Margin="40 5">Business</Button>
+
+                <Button Grid.Row="2" Style="{StaticResource bozBtn}" 
+                        FontSize="22"
+                        Margin="40 5">Standart</Button>
+                <Button Grid.Row="3" Style="{StaticResource bozBtn}" 
+                        FontSize="22"
+                        Margin="40 5">Premium</Button>
+
+            </Grid>
+            
+            <Grid Grid.Row="5">
+                <Button Style="{StaticResource GreenBtn}"
+                        Margin="30,20,30,80"
+                        FontSize="20">Confirm Order</Button>
+            </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <map:Map Name="userMap"></map:Map>
+        </Grid>
+
+
+    </Grid>
+</Window>
